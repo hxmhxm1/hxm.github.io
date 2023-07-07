@@ -1,6 +1,9 @@
 ---
 title: css-modules解决css样式命名冲突的问题
+categories:
+  - 打包工具
 ---
+
 ## 是什么
 
 css modules是用于模块化和组合css的系统，通过加入局部作用域、依赖管理来避免全局污染和样式冲突，并且css module在打包的时候会自动将类名转成hash值，完全杜绝css类名冲突问题
@@ -13,8 +16,8 @@ css modules是用于模块化和组合css的系统，通过加入局部作用域
 ![](../images/2.png)
 
 ```js
-import styles from './index.moudule.scss'
-<div className={style.chat}></div>
+import styles from './index.moudule.scss';
+<div className={style.chat}></div>;
 ```
 
 ![](../images/3.png)
