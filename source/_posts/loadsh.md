@@ -1,7 +1,7 @@
 ---
 title: loadsh
 date: 2023-07-08 10:36:03
-tags: 'loadsh',
+tags: 'loadsh'
 categories:
   - 插件使用
 ---
