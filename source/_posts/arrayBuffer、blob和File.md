@@ -1,6 +1,6 @@
 ---
-title: arrayBuffer和blob
-tags: arrayBuffer和blob
+title: ArrayBuffer\Blob\File
+tags: ArrayBuffer\Blob\File
 categories:
   - 数据类型
 ---
@@ -40,3 +40,33 @@ categories:
 * 该数组没有继承Array.prototype属性，使用Array.isArray()访问是false, 不能使用pop push等方法
 * 常用于音频编辑和WebGL中
 * 是强类型数据 Int8Array() Unit8Array()
+
+## File
+
+File对象是一种特定类型的Blob,并且可以在Blob可以使用的任何上下文中使用；是操作文件的接口类型
+File和blob相互转化
+
+```js
+const data = await ffmpeg.readFile('output.mp4') // blob
+const compressedFile = new File([data], 'compressed_' + file.name, {
+  type: file.type,
+})
+```
+
+## FileList
+
+通过对于input框获取到的就是file的数组
+
+```js
+<input id="fileItem" type="file" />
+const file = document.getElementById("fileItem").files[0];
+```
+
+## 将本地文件，blob file转成url，供展示或者下载
+
+```js
+const url = URL.createObjectURL(object)
+URL.revokeObjectURL(url) // 使用后释放地址
+
+// 此属性不能在webworker中使用，会造成内存泄漏
+```
