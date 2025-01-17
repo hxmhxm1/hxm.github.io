@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ArrayBuffer\Blob\File | hxm-blog</title><meta name="author" content="hxm"><meta name="copyright" content="hxm"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是arrayBuffer arrayBuffer对象表示原始的二进制数据缓冲区 不能直接操作arrayBuffer,只能通过类型化数组或者DataView。它们会将缓存区中的数据表示为特定格式，并通过这些特定格式来读取缓冲区中的内容 是可以转移的对象，存储在内存中  什么是blob blob表示不可变的、原始数据的类文件对象，存储在磁盘上 File接口继承blob的功能并将其扩展，应用到用户系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArrayBuffer\Blob\File">
+<meta property="og:url" content="http://hxmhxm1.github.io/2024/12/30/arrayBuffer%E3%80%81blob%E5%92%8CFile/index.html">
+<meta property="og:site_name" content="hxm-blog">
+<meta property="og:description" content="什么是arrayBuffer arrayBuffer对象表示原始的二进制数据缓冲区 不能直接操作arrayBuffer,只能通过类型化数组或者DataView。它们会将缓存区中的数据表示为特定格式，并通过这些特定格式来读取缓冲区中的内容 是可以转移的对象，存储在内存中  什么是blob blob表示不可变的、原始数据的类文件对象，存储在磁盘上 File接口继承blob的功能并将其扩展，应用到用户系">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-12-30T02:10:05.594Z">
+<meta property="article:modified_time" content="2025-01-17T08:54:17.199Z">
+<meta property="article:author" content="hxm">
+<meta property="article:tag" content="ArrayBuffer\Blob\File">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://hxmhxm1.github.io/2024/12/30/arrayBuffer%E3%80%81blob%E5%92%8CFile/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ArrayBuffer\Blob\File',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-17 16:54:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="hxm-blog"><span class="site-name">hxm-blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ArrayBuffer\Blob\File</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-30T02:10:05.594Z" title="Created 2024-12-30 10:10:05">2024-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-17T08:54:17.199Z" title="Updated 2025-01-17 16:54:17">2025-01-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ArrayBuffer\Blob\File"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="什么是arrayBuffer"><a href="#什么是arrayBuffer" class="headerlink" title="什么是arrayBuffer"></a>什么是arrayBuffer</h2><ul>
+<li>arrayBuffer对象表示原始的二进制数据缓冲区</li>
+<li>不能直接操作arrayBuffer,只能通过类型化数组或者DataView。它们会将缓存区中的数据表示为特定格式，并通过这些特定格式来读取缓冲区中的内容</li>
+<li>是可以转移的对象，存储在内存中</li>
+</ul>
+<h2 id="什么是blob"><a href="#什么是blob" class="headerlink" title="什么是blob"></a>什么是blob</h2><ul>
+<li>blob表示不可变的、原始数据的类文件对象，存储在磁盘上</li>
+<li>File接口继承blob的功能并将其扩展，应用到用户系统的文件上</li>
+<li>是浏览器默认的二进制文件类型，常用于音频视频文件</li>
+</ul>
+<h2 id="arrayBuffer和blob关"><a href="#arrayBuffer和blob关" class="headerlink" title="arrayBuffer和blob关"></a>arrayBuffer和blob关</h2><ul>
+<li>都是处理二进制数据的对象</li>
+<li>可以相互转化<br>arrayBuffer -&gt; blob     new Blob([arrayBuffer], {type: ‘application&#x2F;json’})<br>blob -&gt; arrayBuffer<br>  const reader &#x3D; new FileReader()<br>  reader.addEventListener(‘loadend’, () &#x3D;&gt; {<br>&#x2F;&#x2F; reader.result 包含被转化类型化数组的blob中的内容<br>  })<br>  reader.readAsArrayBuffer(blob)</li>
+</ul>
+<h2 id="axios网络请求接收二进制数据配置"><a href="#axios网络请求接收二进制数据配置" class="headerlink" title="axios网络请求接收二进制数据配置"></a>axios网络请求接收二进制数据配置</h2><p>  axios.get(‘’, {responseType: ‘arrayBuffer’})<br>  需要增加responseType: ‘arraybuffer’, 不然浏览器会默认以blob的形式区接收数据，但是这个数据其实是arraybuffer，会造成解析数据异常</p>
+<h2 id="什么是类型化数组"><a href="#什么是类型化数组" class="headerlink" title="什么是类型化数组"></a>什么是类型化数组</h2><ul>
+<li>类似数组的结构，提供了一种用于在内存中访问原始二进制数据的机制</li>
+<li>该数组没有继承Array.prototype属性，使用Array.isArray()访问是false, 不能使用pop push等方法</li>
+<li>常用于音频编辑和WebGL中</li>
+<li>是强类型数据 Int8Array() Unit8Array()</li>
+</ul>
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><p>File对象是一种特定类型的Blob,并且可以在Blob可以使用的任何上下文中使用；是操作文件的接口类型<br>File和blob相互转化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> ffmpeg.<span class="title function_">readFile</span>(<span class="string">&#x27;output.mp4&#x27;</span>) <span class="comment">// blob</span></span><br><span class="line"><span class="keyword">const</span> compressedFile = <span class="keyword">new</span> <span class="title class_">File</span>([data], <span class="string">&#x27;compressed_&#x27;</span> + file.<span class="property">name</span>, &#123;</span><br><span class="line">  <span class="attr">type</span>: file.<span class="property">type</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="FileList"><a href="#FileList" class="headerlink" title="FileList"></a>FileList</h2><p>通过对于input框获取到的就是file的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=<span class="string">&quot;fileItem&quot;</span> type=<span class="string">&quot;file&quot;</span> /&gt;</span><br><span class="line"><span class="keyword">const</span> file = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;fileItem&quot;</span>).<span class="property">files</span>[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+<h2 id="将本地文件，blob-file转成url，供展示或者下载"><a href="#将本地文件，blob-file转成url，供展示或者下载" class="headerlink" title="将本地文件，blob file转成url，供展示或者下载"></a>将本地文件，blob file转成url，供展示或者下载</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(object)</span><br><span class="line"><span class="variable constant_">URL</span>.<span class="title function_">revokeObjectURL</span>(url) <span class="comment">// 使用后释放地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 此属性不能在webworker中使用，会造成内存泄漏</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://hxmhxm1.github.io">hxm</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://hxmhxm1.github.io/2024/12/30/arrayBuffer%E3%80%81blob%E5%92%8CFile/">http://hxmhxm1.github.io/2024/12/30/arrayBuffer%E3%80%81blob%E5%92%8CFile/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ArrayBuffer-Blob-File/">ArrayBuffer\Blob\File</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12/30/vite/" title="vite介绍"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">vite介绍</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/02/serviceWorker%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E6%8F%90%E5%89%8D%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/" title="为什么serviceWorker可以提前加载资源"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">为什么serviceWorker可以提前加载资源</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">hxm</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFarrayBuffer"><span class="toc-number">1.</span> <span class="toc-text">什么是arrayBuffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFblob"><span class="toc-number">2.</span> <span class="toc-text">什么是blob</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrayBuffer%E5%92%8Cblob%E5%85%B3"><span class="toc-number">3.</span> <span class="toc-text">arrayBuffer和blob关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">axios网络请求接收二进制数据配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9E%8B%E5%8C%96%E6%95%B0%E7%BB%84"><span class="toc-number">5.</span> <span class="toc-text">什么是类型化数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#File"><span class="toc-number">6.</span> <span class="toc-text">File</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FileList"><span class="toc-number">7.</span> <span class="toc-text">FileList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%EF%BC%8Cblob-file%E8%BD%AC%E6%88%90url%EF%BC%8C%E4%BE%9B%E5%B1%95%E7%A4%BA%E6%88%96%E8%80%85%E4%B8%8B%E8%BD%BD"><span class="toc-number">8.</span> <span class="toc-text">将本地文件，blob file转成url，供展示或者下载</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/30/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化">性能优化</a><time datetime="2024-12-30T07:02:54.537Z" title="Created 2024-12-30 15:02:54">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/30/tapable/" title="tapable">tapable</a><time datetime="2024-12-30T06:56:19.676Z" title="Created 2024-12-30 14:56:19">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/30/nodeJS/" title="nodeJS相关概念">nodeJS相关概念</a><time datetime="2024-12-30T06:50:28.902Z" title="Created 2024-12-30 14:50:28">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/30/nextTick/" title="nextTick">nextTick</a><time datetime="2024-12-30T06:33:23.985Z" title="Created 2024-12-30 14:33:23">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/30/vue%E4%B8%AD%E7%BB%84%E5%90%88%E5%BC%8F%E5%92%8C%E9%80%89%E9%A1%B9%E6%97%B6api/" title="vue组合式和选项式api">vue组合式和选项式api</a><time datetime="2024-12-30T03:53:44.313Z" title="Created 2024-12-30 11:53:44">2024-12-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By hxm</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
